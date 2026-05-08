@@ -122,3 +122,14 @@ mecanic-base/
 ├── README.md
 ├── DER.png
 └── screenshots/
+
+---
+
+# Autor
+
+Pedro Henrique Silva do Carmo
+
+
+
+
+
