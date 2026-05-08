@@ -116,7 +116,7 @@ O banco foi modelado utilizando relacionamentos relacionais para representar um 
 # Estrutura do Repositório
 
 ```text
-mecanic-base/
+📦 mecanic-base/
 │
 ├── MecanicBase.sql
 ├── README.md
