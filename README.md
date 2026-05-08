@@ -129,6 +129,5 @@ O banco foi modelado utilizando relacionamentos relacionais para representar um 
 
 **Pedro Henrique Silva do Carmo**  
 LinkedIn: https://www.linkedin.com/in/pedroo-carmo
+<br>
 GitHub: https://https://github.com/PedroCarmo01
-
-
