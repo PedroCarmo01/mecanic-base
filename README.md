@@ -2,13 +2,17 @@
 
 <img width="1075" height="494" alt="image" src="https://github.com/user-attachments/assets/40dc5147-2b38-4156-bb11-f61b21b300cc" />
 
-Sistema de modelagem de banco de dados para gerenciamento de oficina mecânica, desenvolvido com foco em organização relacional, controle de ordens de serviço e futura expansão para backend, análise de dados e dashboards.
+Sistema de gerenciamento para oficina mecânica, desenvolvido utilizando Java Swing, MySQL e JDBC, com foco em CRUD completo, modelagem relacional, e futura expansão para backend, análise de dados e dashboards.
 
 ---
 
 # Sobre o Projeto
 
-Este projeto foi desenvolvido com o objetivo de praticar modelagem de banco de dados relacional utilizando SQL, simulando o funcionamento de uma oficina mecânica.
+Este projeto foi desenvolvido com o objetivo de praticar desenvolvimento de sistemas desktop utilizando Java, integração com banco de dados MySQL e modelagem relacional aplicada a um cenário real de uma oficina mecânica.
+
+O sistema está sendo desenvolvido de forma progressiva, iniciando pela estrutura do banco de dados e evoluindo para funcionalidades completas de gerenciamento.
+
+Atualmente o sistema já possui funcionalidades reais de CRUD para clientes utilizando Java Swing integrado ao MySQL.
 
 O sistema possui entidades relacionadas a:
 
@@ -19,28 +23,48 @@ O sistema possui entidades relacionadas a:
 - Serviços
 - Peças
 
-Além disso, o projeto foi estruturado pensando em futuras expansões para aplicações backend em Java, dashboards analíticos e integração com ferramentas de análise de dados.
-
 ---
 
 # Tecnologias Utilizadas
 
+- Java
+- Java Swing
+- JDBC
 - MySQL
 - SQL
 - MySQL Workbench
 
 ---
 
-# Funcionalidades Modeladas
+# Funcionalidades Implementadas
 
 - Cadastro de clientes
+- Listagem dinâmica
+- Atualização de clientes
+- Integração com banco MySQL
+- Validação de campos para cadastro
+- Verificação de duplicidade
+- Atualização automática da tabela
+
+---
+
+# Funcionalidades Planejadas
+
+## Veículos
 - Cadastro de veículos
-- Controle de funcionários
-- Controle de peças
-- Cadastro de serviços
-- Gerenciamento de ordens de serviço
+- Relacionamento entre cliente e veículo
+- Validação de placa
+
+## Ordem de Serviço
+- Abertura de ordens de serviço
+- Controle de status
+- Histórico de manutenção
+- Serviços realizados
+
+## Peças e Estoque
+- Cadastro de peças
+- Controle de estoque
 - Relacionamento entre serviços e peças
-- Relacionamento entre ordens e funcionários
 
 ---
 
@@ -61,7 +85,8 @@ O banco foi modelado utilizando relacionamentos relacionais para representar um 
 # Objetivos do Projeto
 
 - Praticar modelagem relacional
-- Desenvolver lógica de banco de dados
+- Desenvolver lógica backend com Java
+- Trabalhar integração com banco de dados
 - Simular regras de negócio reais
 - Evoluir futuramente para um sistema completo
 
@@ -70,27 +95,28 @@ O banco foi modelado utilizando relacionamentos relacionais para representar um 
 # Futuras Melhorias
 
 ## Backend
-- Integração com Java utilizando JDBC
-- Desenvolvimento de CRUD completo
 - Implementação de padrão MVC
-- Criação de API backend
+- Criação de API REST com Spring Boot
+- Sistema de autenticação
+- Controle de usuários
 
 ## Análise de Dados
-- Consultas analíticas em SQL
-- Relatórios de faturamento
-- Análise de serviços mais realizados
+- Relatórios analíticos
+- Consultas SQL analíticas
+- Exportação para Excel
 - Indicadores operacionais
 
 ## BI e Dashboards
 - Integração com Power BI
-- Exportação de dados para Excel
-- Dashboards gerenciais
-- Indicadores financeiros
+- Análise de produtividade
+- Dashboards financeiros
+- Indicadores gerenciais
 
-## Frontend
-- Interface web para gerenciamento
-- Painel administrativo
-- Sistema completo de oficina mecânica
+## Interface
+- Melhorias visuais no Java Swing
+- Menu principal
+- Navegação entre telas
+- Interface administrativa
 
 ---
 
@@ -107,9 +133,11 @@ O banco foi modelado utilizando relacionamentos relacionais para representar um 
 
 # Como Executar
 
-1. Abra o MySQL Workbench
-2. Execute o arquivo `MecanicBase.sql`
-3. O banco de dados será criado automaticamente
+1. Clone o repositório
+2. Abra o projeto na IDE Java
+3. Configure a conexão com MySQL
+4. Execute o banco de dados
+5. Rode a aplicação Java
 
 ---
 
@@ -118,10 +146,13 @@ O banco foi modelado utilizando relacionamentos relacionais para representar um 
 ```text
 📦 mecanic-base/
 │
-├── MecanicBase.sql
-├── README.md
+├── src/
+├── build/
 ├── DER.png
-└── screenshots/
+├── screenshots/
+├── docs/
+├── nbproject/
+└── database/
 ```
 ---
 
