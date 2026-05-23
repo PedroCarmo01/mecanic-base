@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Pedro Carmo
@@ -59,6 +60,8 @@ public class ClienteDAO {
             banco_stmt.execute();
             banco_stmt.close();
             
+            JOptionPane.showMessageDialog(null, "Cliente excluído com sucesso");
+            
         } catch (Exception ex) {
             System.out.println("Erro: " + ex.getMessage());
         }
@@ -68,24 +71,22 @@ public class ClienteDAO {
 
     public void editarCliente(Cliente cliente){
         
-        String cpf = cliente.getCpf();
-        String nome = cliente.getNome();
-        String telefone = cliente.getTelefone();
-        String email = cliente.getEmail();
-        
         String sql = "update cliente set cpf = ?, nome = ?, telefone = ?, email = ? where id = ?";
+        conn = Conexao.conectar();
         
         try {
             PreparedStatement banco_stmt = conn.prepareStatement(sql);
             
-            banco_stmt.setString(1, cpf);
-            banco_stmt.setString(2, nome);
-            banco_stmt.setString(3, telefone);
-            banco_stmt.setString(4, email);
+            banco_stmt.setString(1, cliente.getCpf());
+            banco_stmt.setString(2, cliente.getNome());
+            banco_stmt.setString(3, cliente.getTelefone());
+            banco_stmt.setString(4, cliente.getEmail());
             banco_stmt.setInt(5, cliente.getId());
             
-            banco_stmt.execute();
-            banco_stmt.close();
+            banco_stmt.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso");
+            
         } catch (Exception ex) {
             System.out.println("Erro: " + ex.getMessage());
         }              
@@ -121,5 +122,31 @@ public class ClienteDAO {
             System.out.println("Erro: " + ex.getMessage());
         }
         return lista;
+    }
+    
+    public boolean cpfExiste(String cpf){
+        
+        String sql = "select * from cliente where cpf = ?";
+        
+        conn = Conexao.conectar();
+        
+        try{
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            
+            stmt.setString(1, cpf);
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            if(rs.next()){                
+                
+                return true;
+            }
+            
+        } catch(Exception ex){
+            
+            System.out.println("Erro: " + ex.getMessage());
+        }
+        
+        return false;
     }
 }
