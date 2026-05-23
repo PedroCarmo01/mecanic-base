@@ -3,11 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mecanicbase.repository;
+
 import com.mecanicbase.util.Conexao;
 import com.mecanicbase.model.Cliente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Pedro Carmo
@@ -85,7 +88,38 @@ public class ClienteDAO {
             banco_stmt.close();
         } catch (Exception ex) {
             System.out.println("Erro: " + ex.getMessage());
+        }              
+    }
+    
+    public List<Cliente> listarClientes(){
+        
+        List<Cliente> lista = new ArrayList<>();
+        
+        
+        String sql = "select * from cliente";
+        
+        conn = Conexao.conectar();
+        
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                
+                Cliente c = new Cliente();
+                
+                c.setId(rs.getInt("id"));
+                c.setNome(rs.getString("nome"));
+                c.setCpf(rs.getString("cpf"));
+                c.setTelefone(rs.getString("telefone"));
+                c.setEmail(rs.getString("email"));
+                
+                lista.add(c);
+            }
+        } catch (Exception ex){
+            System.out.println("Erro: " + ex.getMessage());
         }
-               
+        return lista;
     }
 }
