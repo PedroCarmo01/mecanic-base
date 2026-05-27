@@ -24,7 +24,7 @@ create table veiculo(
     modelo varchar(100) not null,
     ano year not null,
     cor varchar(50),
-    tipo varchar(50),
+    cambio varchar(50),
     combustivel varchar(100),
     constraint pk_veiculo primary key (placa),
     constraint fk_id_cliente foreign key (id_cliente) references cliente(id)
@@ -129,4 +129,3 @@ create table ordem_funcionario (
     constraint fk_ordem_id_os foreign key (id_ordem_os) references ordem_de_servico(id_os),
     constraint fk_funcionario_fez foreign key (id_func) references funcionario(id_funcionario)
 );
-
