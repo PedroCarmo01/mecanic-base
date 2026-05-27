@@ -2,26 +2,21 @@
 
 <img width="1075" height="494" alt="image" src="https://github.com/user-attachments/assets/40dc5147-2b38-4156-bb11-f61b21b300cc" />
 
-Sistema de gerenciamento para oficina mecânica, desenvolvido utilizando Java Swing, MySQL e JDBC, com foco em CRUD completo, modelagem relacional, e futura expansão para backend, análise de dados e dashboards.
+Sistema de gerenciamento para oficina mecânica, desenvolvido utilizando Java, Java Swing, MySQL e JDBC, com foco no aprendizado de desenvolvimento backend, modelagem relacional e futura análise de dados gerados pelo sistema.
 
 ---
 
 # Sobre o Projeto
 
-Este projeto foi desenvolvido com o objetivo de praticar desenvolvimento de sistemas desktop utilizando Java, integração com banco de dados MySQL e modelagem relacional aplicada a um cenário real de uma oficina mecânica.
+O projeto MecanicBase surgiu inicialmente com o foco na estrutura de um banco de dados relacional para uma oficina mecânica.
+
+Conforme foi evoluindo o projeto, a ideia de ser apenas uma modelagem do banco passou a se tornar um sistema desktop funcional utilizando Java Swing integrado ao MySQL.
+
+Além do desenvolvimento, o objetivo principal é futuramente utilizar os dados que serão gerados pelo sistema para estudos e análises.
 
 O sistema está sendo desenvolvido de forma progressiva, iniciando pela estrutura do banco de dados e evoluindo para funcionalidades completas de gerenciamento.
 
-Atualmente o sistema já possui funcionalidades reais de CRUD para clientes utilizando Java Swing integrado ao MySQL.
-
-O sistema possui entidades relacionadas a:
-
-- Clientes
-- Veículos
-- Funcionários
-- Ordens de Serviço
-- Serviços
-- Peças
+Este projeto também está sendo utilizado principalmente para aprofundar meus conhecimentos.
 
 ---
 
@@ -38,39 +33,32 @@ O sistema possui entidades relacionadas a:
 
 # Funcionalidades Implementadas
 
+## Clientes
 - Cadastro de clientes
-- Listagem dinâmica
-- Atualização de clientes
-- Integração com banco MySQL
-- Validação de campos para cadastro
+- Atualização dos registros
+- Exclusão de clientes
+- Listagem de clientes
+- Validação de campos
 - Verificação de duplicidade
 - Atualização automática da tabela
 
----
-
-# Funcionalidades Planejadas
-
 ## Veículos
 - Cadastro de veículos
-- Relacionamento entre cliente e veículo
-- Validação de placa
+- Integração entre telas (seleção de cliente para vínculo com veículo)
+- Validação de campos
+- Atualização automática da tabela
 
-## Ordem de Serviço
-- Abertura de ordens de serviço
-- Controle de status
-- Histórico de manutenção
-- Serviços realizados
-
-## Peças e Estoque
-- Cadastro de peças
-- Controle de estoque
-- Relacionamento entre serviços e peças
+## Banco de Dados
+- Modelagem Relacional completa
+- Relacionamentos entre entidades
+- Estrutura normalizada
+- Utilização de chaves primárias e estrangeiras
 
 ---
 
 # Estrutura do Banco de Dados
 
-O banco foi modelado utilizando relacionamentos relacionais para representar um cenário real de oficina mecânica.
+O banco foi modelado utilizando relacionamentos entre entidades para representar um cenário real de oficina mecânica.
 
 ## Principais relacionamentos
 
@@ -80,22 +68,48 @@ O banco foi modelado utilizando relacionamentos relacionais para representar um 
 - Um serviço pode utilizar várias peças
 - Uma ordem pode possuir vários funcionários responsáveis
 
+## Principais entidades
+
+- Clientes
+- Veículos
+- Funcionários
+- Ordens de Serviço
+- Serviços
+- Peças
+
 ---
 
 # Objetivos do Projeto
 
-- Praticar modelagem relacional
-- Desenvolver lógica backend com Java
-- Trabalhar integração com banco de dados
-- Simular regras de negócio reais
-- Evoluir futuramente para um sistema completo
+## Desenvolvimento Java
+- Praticar lógica de programação
+- Integração com o banco de dados
+- Desenvolver CRUDs completos
+- Aplicar MVC
+
+## Banco de Dados
+- Desenvolver modelagem relacional
+- Treinar relacionamentos entre tabelas
+- Criar consultas SQL
+- Estruturar dados de forma organizada
+
+## Análise de Dados
+O principal objetivo do projeto futuramente é utilizar os dados para fazer estudos e análises.
+
+Possíveis análises futuras:
+- Clientes com maior número de ordens
+- Serviços mais executados
+- Funcionários com maior produtividade
+- Peças mais utilizadas
+- Faturamento mensal
+- Ticket médio por atendimento
 
 ---
 
 # Futuras Melhorias
 
 ## Backend
-- Implementação de padrão MVC
+- Refatoração e melhoria de padrão MVC
 - Criação de API REST com Spring Boot
 - Sistema de autenticação
 - Controle de usuários
@@ -118,16 +132,8 @@ O banco foi modelado utilizando relacionamentos relacionais para representar um 
 - Navegação entre telas
 - Interface administrativa
 
----
-
-# Possíveis Análises Futuras
-
-- Clientes com maior número de ordens
-- Serviços mais executados
-- Funcionários com maior produtividade
-- Peças mais utilizadas
-- Faturamento mensal
-- Ticket médio por atendimento
+## Front-end Web
+Futuramente o projeto também pode evoluir para uma aplicação web.
 
 ---
 
@@ -147,12 +153,16 @@ O banco foi modelado utilizando relacionamentos relacionais para representar um 
 📦 mecanic-base/
 │
 ├── src/
-├── build/
-├── DER.png
+│      ├── model/
+│      ├── repository/
+│      ├── view/
+│      ├── util/
+│    
+├── database/
 ├── screenshots/
 ├── docs/
 ├── nbproject/
-└── database/
+└── build/
 ```
 ---
 
@@ -161,4 +171,4 @@ O banco foi modelado utilizando relacionamentos relacionais para representar um 
 **Pedro Henrique Silva do Carmo**  
 LinkedIn: https://www.linkedin.com/in/pedroo-carmo
 <br>
-GitHub: https://https://github.com/PedroCarmo01
+GitHub: https://github.com/PedroCarmo01
